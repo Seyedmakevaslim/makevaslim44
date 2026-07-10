@@ -1,0 +1,45 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "dns": {
+    "hosts": {
+      "domain:googleapis.cn": "googleapis.com"
+    },
+    "servers": [
+      "8.8.8.8",
+      "1.1.1.1",
+      "localhost"
+    ]
+  },
+  "inbounds": [
+    {
+      "port": 8080, 
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "e5b8a6a1-a7b3-4f16-89d2-97b7914db459",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/Ma_Ke_Vaslim"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    }
+  ]
+}
