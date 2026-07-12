@@ -1,26 +1,20 @@
 {
   "log": {
-    "loglevel": "warning"
+    "loglevel": "error"
   },
   "dns": {
-    "hosts": {
-      "domain:googleapis.cn": "googleapis.com"
-    },
-    "servers": [
-      "8.8.8.8",
-      "1.1.1.1",
-      "localhost"
-    ]
+    "servers": ["8.8.8.8", "1.1.1.1"]
   },
   "inbounds": [
     {
-      "port": 8080, 
+      "port": 8080,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "id": "e5b8a6a1-a7b3-4f16-89d2-97b7914db459",
-            "level": 0
+            "level": 0,
+            "email": "user@example.com"
           }
         ],
         "decryption": "none"
@@ -28,7 +22,8 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/Ma_Ke_Vaslim"
+          "path": "/Ma_Ke_Vaslim",
+          "bufferSize": 0
         }
       }
     }
@@ -37,7 +32,7 @@
     {
       "protocol": "freedom",
       "settings": {
-        "domainStrategy": "UseIP"
+        "domainStrategy": "UseIPv4"
       },
       "tag": "direct"
     }
